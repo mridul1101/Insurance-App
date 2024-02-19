@@ -22,15 +22,12 @@ namespace Inuranceappbackend
             this.SecretKey = _config.GetSection("jwtConfig").GetSection("Key").Value;
             this.TokenDuration = Int32.Parse(config.GetSection("jwtConfig").GetSection("Duration").Value);
         }
-        public string GenerateToken(String ID, String FullName, String Email, String Mobile, Boolean IsAdmin)
+        public string GenerateToken(String ID, String FullName, String Email, String Mobile)
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.SecretKey));
             var signature = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            string role = "";
-            if (IsAdmin)
-            {
-                role = "Admin";
-            }
+           
+            
 
             var payload = new[]
             {
@@ -38,7 +35,7 @@ namespace Inuranceappbackend
                 new Claim("fullname",FullName),
                 new Claim("email",Email),
                 new Claim("mobile",Mobile),
-                new Claim("role",role)
+               
             };
             var jwtToken = new JwtSecurityToken(
                 issuer: "localhost",

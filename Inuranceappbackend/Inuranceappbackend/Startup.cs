@@ -35,7 +35,18 @@ namespace Inuranceappbackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyAllowSpecificOrigins",
+                    builder =>
+                    {
+                        builder
+                            .WithOrigins("http://localhost:4200") // Add your frontend URL here
+                            .AllowAnyMethod()
+                            .AllowAnyHeader()
+                            .AllowCredentials(); // Allow credentials if needed
+                    });
+            });
             services.AddControllers();
             
             services.AddSwaggerGen(c =>
@@ -46,7 +57,8 @@ namespace Inuranceappbackend
             services.AddDbContext<BackendDbcontext>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("BackendConnectionString")));
             services.AddScoped<IAccountRepository, AccountRepository>();
-            
+            services.AddSingleton(Configuration);
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
             {
                 x.TokenValidationParameters = new TokenValidationParameters
@@ -77,6 +89,7 @@ namespace Inuranceappbackend
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors("MyAllowSpecificOrigins");
 
             app.UseAuthorization();
 

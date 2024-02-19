@@ -13,8 +13,7 @@ namespace Inuranceappbackend.Models
         public string Email { get; set; }
         public string Mobile { get; set; }
        
-        public string EncryptedPassword { get; set; }
-        public string IV { get; set; }
-        public Boolean IsAdmin { get; set; }
+        public string password { get; set; }
+       
     }
 }

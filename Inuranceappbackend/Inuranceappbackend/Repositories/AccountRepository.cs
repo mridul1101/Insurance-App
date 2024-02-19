@@ -13,8 +13,8 @@ namespace Inuranceappbackend.Repositories
     {
         private readonly IConfiguration _config;
         private readonly BackendDbcontext _context;
-        private readonly AesDecryptionService _aesDecryptionService;
-      
+        
+
 
         public AccountRepository(BackendDbcontext context, IConfiguration config)
         {
@@ -31,7 +31,7 @@ namespace Inuranceappbackend.Repositories
                     return "FAILURE";
                 }
 
-                user.EncryptedPassword = PasswordHasher.HashPassword(user.EncryptedPassword);
+                user.password = PasswordHasher.HashPassword(user.password);
                 _context.Users.Add(user);
                 _context.SaveChanges();
 
@@ -41,26 +41,14 @@ namespace Inuranceappbackend.Repositories
         }
         public Users Login(Login login)
         {
-
-
-            var user = _context.Users.FirstOrDefault(u => u.Email == login.Email);
-
-            if (user != null)
+            var userAvailable = _context.Users.FirstOrDefault(x => x.Email == login.Email);
+            if (userAvailable == null)
             {
-                string decryptedStoredPassword = _aesDecryptionService.Decrypt(user.EncryptedPassword, user.IV);
-
-                if (decryptedStoredPassword == _aesDecryptionService.Decrypt(login.Password, user.IV))
-                {
-                    return user;
-                }
+                return userAvailable;
             }
 
-            return null;
-
-
-
-
-
+           
+            return userAvailable;
         }
     }
 }

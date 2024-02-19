@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inuranceappbackend.Helper
 {
-    public class PasswordHasher
+    public static class PasswordHasher
     {
         private static RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
         private static readonly int SaltSize = 16;
