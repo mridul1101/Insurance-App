@@ -141,3 +141,5 @@ C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappback
 C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend.Tests\obj\Debug\net5.0\ref\Inuranceappbackend.Tests.dll
 C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend.Tests\obj\Debug\net5.0\Inuranceappbackend.Tests.pdb
 C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend.Tests\obj\Debug\net5.0\Inuranceappbackend.Tests.genruntimeconfig.cache
+C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend.Tests\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend.Tests\bin\Debug\net5.0\Identity.PasswordHasher.dll

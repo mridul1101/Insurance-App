@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Threading.Tasks;
-
 namespace Inuranceappbackend.Helper
-{
+{   //This is Password Hasher used to hash password in database.
     public static class PasswordHasher
     {
         private static RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
@@ -38,7 +34,5 @@ namespace Inuranceappbackend.Helper
             }
             return true;
         }
-
-
     }
 }

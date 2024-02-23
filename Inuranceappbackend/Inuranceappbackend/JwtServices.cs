@@ -1,15 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Inuranceappbackend
-{
+{   //This is jwt service for token
     public class JwtServices
     {
         public string SecretKey { get; set; }
@@ -26,9 +23,6 @@ namespace Inuranceappbackend
         {
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.SecretKey));
             var signature = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-           
-            
-
             var payload = new[]
             {
                 new Claim("id",ID),
@@ -46,8 +40,6 @@ namespace Inuranceappbackend
 
                 );
             return new JwtSecurityTokenHandler().WriteToken(jwtToken);
-
-
         }
     }
 }

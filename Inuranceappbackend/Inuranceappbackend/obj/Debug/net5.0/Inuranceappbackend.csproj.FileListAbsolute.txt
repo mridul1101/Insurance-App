@@ -57,3 +57,5 @@ C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappback
 C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend\obj\Debug\net5.0\Inuranceappbackend.pdb
 C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend\obj\Debug\net5.0\Inuranceappbackend.genruntimeconfig.cache
 C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\mridulsharma01\OneDrive - Nagarro\Desktop\Insurance app\Inuranceappbackend\Inuranceappbackend\bin\Debug\net5.0\Identity.PasswordHasher.dll
