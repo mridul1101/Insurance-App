@@ -36,14 +36,15 @@ namespace Inuranceappbackend.Controllers
             }
         }
 
+
         [HttpGet("PolicyDetails/{policyId}")]
         public IActionResult GetPolicyDetails(int policyId)
         {
             try
             {
                 var policyDetails = _policyRepository.GetPolicyDetailsById(policyId);
-                if (policyDetails == null)
-                    return NotFound();
+                if (policyDetails == null || policyDetails.Count == 0) // Check for empty list
+                    return NotFound("Policy details not found.");
 
                 return Ok(policyDetails);
             }
@@ -52,6 +53,7 @@ namespace Inuranceappbackend.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
 
     }
 }

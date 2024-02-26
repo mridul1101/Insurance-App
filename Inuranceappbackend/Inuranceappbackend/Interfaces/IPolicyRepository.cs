@@ -10,7 +10,7 @@ namespace Inuranceappbackend.Interfaces
     {
 
         List<Policy> GetPoliciesByUserId(int ID);
-        object GetPolicyDetailsById(int policyId);
+        List<Policy> GetPolicyDetailsById(int policyId);
 
 
 

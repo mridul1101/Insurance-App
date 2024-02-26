@@ -24,27 +24,36 @@ namespace Inuranceappbackend.Repositories
 
         public List<Policy> GetPoliciesByUserId(int ID)
         {
-            return _context.PolicyUsers
+            var policies = _context.PolicyUsers
                              .Where(pu => pu.ID == ID)
-                             .Select(pu => pu.Policy)
-                             .ToList();
-        }
-        public object GetPolicyDetailsById(int policyId)
-        {
-            return _context.Policies
-                             .Where(p => p.PolicyId == policyId)
-                             .Select(p => new
+                             .Select(pu => new Policy
                              {
-                                 p.PolicyId,
-                                 p.PolicyName,
-                                 p.PremiumAmount,
-                                 p.LastPremiumPaid,
-                                 p.NextPremiumdue,
-                                 p.PolicyDescription,
-                                 p.PolicyType
+                                 PolicyId = pu.Policy.PolicyId,
+                                 PolicyName = pu.Policy.PolicyName,
+                                 PremiumAmount = pu.Policy.PremiumAmount,
+                                 LastPremiumPaid = pu.Policy.LastPremiumPaid
                              })
-                             .FirstOrDefault();
+                             .ToList();
+            return policies;
         }
+        public List<Policy> GetPolicyDetailsById(int policyId)
+        {
+            var policy = _context.Policies
+                                 .Where(p => p.PolicyId == policyId)
+                                 .Select(p => new Policy
+                                 {
+                                     PolicyId = p.PolicyId,
+                                     PolicyName = p.PolicyName,
+                                     PremiumAmount = p.PremiumAmount,
+                                     LastPremiumPaid = p.LastPremiumPaid,
+                                     NextPremiumdue = p.NextPremiumdue,
+                                     PolicyDescription = p.PolicyDescription,
+                                     PolicyType = p.PolicyType
+                                 })
+                                 .ToList();
+            return policy;
+        }
+
 
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Inuranceappbackend.Migrations
 {
     [DbContext(typeof(BackendDbcontext))]
-    [Migration("20240224172629_kk")]
-    partial class kk
+    [Migration("20240226063917_new")]
+    partial class @new
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -1,0 +1,13 @@
+.btn-group {
+    margin-right: 10px; /* Adjust as needed */
+}
+.bg-skyblue {
+    background-color: skyblue;
+}
+.white-btn {
+    background-color: white;
+    color: black;
+}
+.text-black {
+    color: black; /* Set text color to black */
+}

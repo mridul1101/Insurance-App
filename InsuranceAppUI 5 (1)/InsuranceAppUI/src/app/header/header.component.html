@@ -1,0 +1,31 @@
+<header class="w-100 bg-skyblue px-4 py-2 my-shadow d-flex justify-content-between align-items-center">
+    <div class="text-black fs-4 fw-bold" style="color: black; font-size: 20px">
+        <span >Insurance App </span>
+    </div>
+
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group me-4" role="group">
+            <button *ngIf="!isLoggedIn()" type="button" class="btn btn-primary btn-sm white-btn" routerLink="/login">Login</button>
+        </div>
+        <div class="btn-group me-4" role="group">
+            <button *ngIf="isLoggedIn()" type="button" class="btn btn-outline-primary" routerLink="/policieslist" style="color: white;">User Policies</button>
+        </div>
+
+        <div class="btn-group me-4" role="group">
+            <button *ngIf="!isLoggedIn()" type="button" class="btn btn-primary white-btn" routerLink="/">Signup</button>
+        </div>
+        <div>
+            <button *ngIf="isLoggedIn()" type="button" class="btn btn-outline-primary" routerLink="/login" (click)="logout()" style="color: white;">
+                Logout
+            </button>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+
