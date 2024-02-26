@@ -45,6 +45,7 @@ namespace Inuranceappbackend
             services.AddDbContext<BackendDbcontext>(options =>
     options.UseSqlServer(Configuration.GetConnectionString("BackendConnectionString")));
             services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<IPolicyRepository, PolicyRepository>();
             services.AddSingleton(Configuration);
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>

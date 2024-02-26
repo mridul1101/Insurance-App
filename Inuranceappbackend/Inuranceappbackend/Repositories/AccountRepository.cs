@@ -41,5 +41,9 @@ namespace Inuranceappbackend.Repositories
             }
             return userAvailable;
         }
+        public Users GetUserById(int id)
+        {
+            return _context.Users.Find(id);
+        }
     }
 }

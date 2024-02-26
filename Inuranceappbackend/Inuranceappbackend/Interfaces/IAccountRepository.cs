@@ -5,6 +5,8 @@ namespace Inuranceappbackend.Interfaces
     public interface IAccountRepository
     {
         string CreateUser(Users user);
-        Users Login(Login login); 
+        Users Login(Login login);
+       
+
     }
 }
