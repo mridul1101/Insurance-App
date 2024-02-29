@@ -1,0 +1,73 @@
+<!-- sign-up.component.html -->
+
+<form class="border p-3 rounded-3" [formGroup]="SignUpForm" (ngSubmit)="SignUpSubmitted()">
+  <div class="container">
+    <div class="row justify-content-center mt-3">
+      <div class="col-md-6 border rounded p-4">
+        <div class="bg-skyblue p-1 rounded-1 mb-4 text-white">
+          <h2 class="text-center mb-2" style="color: black;">Sign Up</h2>
+        </div>
+
+        <div class="mb-3">
+          <label for="fullname" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullname" formControlName="fullname">
+          <div *ngIf="fullname?.invalid && (fullname?.dirty || fullname?.touched)" class="text-danger">
+            <div *ngIf="fullname?.hasError('required')">Full Name is required</div>
+            <div *ngIf="fullname?.hasError('maxlength')">Full name must be at most 50 characters long.</div>
+            <div *ngIf="fullname?.hasError('pattern')">Full name start with letter only and it will contain space and letters .</div>
+            <div *ngIf="fullname?.hasError('spaceBeforeLetters')">Full name cannot start with a space.</div>
+            <div *ngIf="fullname?.hasError('containsSpecialCharacter')">Full name cannot contain special characters.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger">
+            <div *ngIf="email?.hasError('required')">Email is required</div>
+            <div *ngIf="email?.hasError('email')">Enter a valid email address</div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+
+          <div class="col-md-6">
+            <label for="mobile" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" id="mobile" formControlName="mobile">
+            <div *ngIf="mobile?.invalid && (mobile?.dirty || mobile?.touched)" class="text-danger">
+              <div *ngIf="mobile?.hasError('required')">Mobile Number is required</div>
+              <div *ngIf="mobile?.hasError('pattern')">Enter a valid 10-digit mobile number</div>
+              <div *ngIf="mobile?.hasError('minlength') || mobile?.hasError('maxlength')">Mobile number must be exactly
+                10 characters long.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="pwd" class="form-label">Password</label>
+          <input type="password" class="form-control" id="pwd" formControlName="pwd">
+          <div *ngIf="pwd?.invalid && (pwd?.dirty || pwd?.touched)" class="text-danger">
+            <div *ngIf="pwd?.hasError('required')">Password is required</div>
+            <div *ngIf="pwd?.hasError('minlength')">Password must be at least 8 characters long</div>
+            <div *ngIf="pwd?.hasError('pattern')">Password must contain atleast one special,one upper case, one numeric value and one lower case characters</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="cnfpwd" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="cnfpwd" formControlName="cnfpwd">
+          <div *ngIf="cnfpwd?.invalid && (cnfpwd?.dirty || cnfpwd?.touched)" class="text-danger">
+            <div *ngIf="cnfpwd?.hasError('required')">Confirm Password is required</div>
+            <div [ngStyle]="{'display':repeatpass}" *ngIf="SignUpForm.hasError('passwordMismatch')">Passwords do not match</div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" 
+          [disabled]="SignUpForm.invalid">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

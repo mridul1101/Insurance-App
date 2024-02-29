@@ -1,0 +1,30 @@
+  <br>
+  <br>
+  <div class="container">
+    <table class="table table-striped table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th>Policy ID</th>
+          <th>Policy Name</th>
+          <th>Premium Amount</th>
+          <th>Last Premium Paid</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let policy of PolicyList">
+          <td>{{ policy.policyId }}</td>
+          <td>{{ policy.policyName }}</td>
+          <td>{{ policy.premiumAmount }}</td>
+          <td>{{ policy.lastPremiumPaid | date }}</td>
+          <td>
+
+
+            <a class="text-info" (click)="passPolicyDetailId(policy.policyId)">Details</a>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
