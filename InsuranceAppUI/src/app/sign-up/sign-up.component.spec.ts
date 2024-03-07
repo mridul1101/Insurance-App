@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpComponent } from './sign-up.component';
-import { LoginSignUpService } from '../login-sign-up.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
+import { LoginSignUpService } from '../Services/login-sign-up.service';
 
 describe('SignUpComponent', () => {
   let component: SignUpComponent;

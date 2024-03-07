@@ -10,40 +10,44 @@ import { Policy } from '../Model/model';
 })
 export class PolicyDetailsComponent {
   constructor(private policyService: PolicyService,
-    private router: Router, private route: ActivatedRoute) {}
+    private router: Router, private route: ActivatedRoute) { }
 
   id: number = 0;
   PolicyDetails: Policy[] = [];
 
-  
-  
   ngOnInit(): void {
+    //receiving  the palocy ID from policiesList component
     this.route.queryParams.subscribe((params) => {
       this.id = +params['ID'];
-      console.log(this.id)
     });
 
+    //getting policy details from policyservice
     this.policyService.GetPolicyDetail(this.id).subscribe(res => {
       if (res != null) {
-        this.PolicyDetails = res ;
-        console.log(this.PolicyDetails);
-        console.log(typeof this.PolicyDetails);
-
-      } 
+        this.PolicyDetails = res;
+      }
       else {
         alert('Policy Does not exist ');
       }
     });
   }
+
+  //logic for disabling the payment button if nextPremiumdue is >30
   isPaymentDisabled(nextPremiumdue: Date): boolean {
-    // Calculate the difference in milliseconds between the current date and the next premium due date
     const differenceInMs = new Date(nextPremiumdue).getTime() - Date.now();
-
-    // Calculate the difference in days
     const differenceInDays = differenceInMs / (1000 * 60 * 60 * 24);
-
-    // Return true if the difference is greater than 30 days, indicating the button should be disabled
     return differenceInDays > 30;
-}
+  }
 
+  //sending policy id to the PaymentPage component
+  OnClickPaymentButton(id: number) {
+    this.router.navigate(['/paymentpage'], {
+      queryParams: { ID: id }
+    });
+  }
+
+  //navigating to PoliciesList component
+  GoToPolicyList() {
+    this.router.navigate(['/policieslist'])
+  }
 }

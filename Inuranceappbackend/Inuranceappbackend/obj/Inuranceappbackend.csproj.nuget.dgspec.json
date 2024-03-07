@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\prabhashsharma\\Downloads\\Inuranceappbackend 2\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj": {}
+    "C:\\Users\\prabhashsharma\\Downloads\\git clone\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\prabhashsharma\\Downloads\\Inuranceappbackend 2\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj": {
+    "C:\\Users\\prabhashsharma\\Downloads\\git clone\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\prabhashsharma\\Downloads\\Inuranceappbackend 2\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj",
+        "projectUniqueName": "C:\\Users\\prabhashsharma\\Downloads\\git clone\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj",
         "projectName": "Inuranceappbackend",
-        "projectPath": "C:\\Users\\prabhashsharma\\Downloads\\Inuranceappbackend 2\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj",
+        "projectPath": "C:\\Users\\prabhashsharma\\Downloads\\git clone\\Inuranceappbackend\\Inuranceappbackend\\Inuranceappbackend.csproj",
         "packagesPath": "C:\\Users\\prabhashsharma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\prabhashsharma\\Downloads\\Inuranceappbackend 2\\Inuranceappbackend\\Inuranceappbackend\\obj\\",
+        "outputPath": "C:\\Users\\prabhashsharma\\Downloads\\git clone\\Inuranceappbackend\\Inuranceappbackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

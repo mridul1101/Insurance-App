@@ -13,4 +13,5 @@
     "src/**/*.d.ts"
   ],
   "exclude": ["src/app/login/login.component.html"]
+  
 }

@@ -6,13 +6,14 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  //checking is user login
   isLoggedIn(): boolean {
     const accessToken = localStorage.getItem('access_token');
-    return !!accessToken; // Returns true if the access token exists, otherwise false
+    return !!accessToken;
   }
-
-  logout(){
+  
+  //checking is user logout
+  logout() {
     localStorage.removeItem('access_token');
-    
   }
 }

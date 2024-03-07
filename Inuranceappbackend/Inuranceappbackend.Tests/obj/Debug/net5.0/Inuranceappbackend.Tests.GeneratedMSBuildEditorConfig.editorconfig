@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Inuranceappbackend.Tests
-build_property.ProjectDir = C:\Users\prabhashsharma\Downloads\Inuranceappbackend 2\Inuranceappbackend\Inuranceappbackend.Tests\
+build_property.ProjectDir = C:\Users\prabhashsharma\Downloads\git clone\Inuranceappbackend\Inuranceappbackend.Tests\

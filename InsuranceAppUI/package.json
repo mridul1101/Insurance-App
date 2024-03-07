@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.1.2",
-    "@angular/cli": "^17.2.2",
+    "@angular/cli": "^17.1.2",
     "@angular/common": "^17.1.2",
     "@angular/compiler": "^17.1.2",
     "@angular/compiler-cli": "^17.1.0",

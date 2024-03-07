@@ -3,8 +3,8 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
 import { LoginComponent } from './login.component';
-import { LoginSignUpService } from '../login-sign-up.service';
 import { of } from 'rxjs';
+import { LoginSignUpService } from '../Services/login-sign-up.service';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

@@ -1,0 +1,27 @@
+<br>
+<div class="col-md-4 text-right">
+  <a class="text-info underline-link" (click)="GoToPolicyList()">PolicyList</a> >>
+  <a class="text-info underline-link" (click)="GoToPolicyDetail()">PolicyDetail</a> >>
+  <a>PaymentPage</a>
+</div>
+<br>
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="text-center">Payment Confirmation</h5>
+      </div>
+      <div class="card-body"> <!-- Removed the incorrect \class -->
+        <p>Thank you for your payment! Your transaction has been successfully processed.</p>
+        <hr>
+        <h6>Transaction Details</h6>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Transaction ID:</strong> 123456789</li>
+          <li class="list-group-item"><strong>Policy ID:</strong> {{id}}</li>
+          <li class="list-group-item"><strong>Date:</strong> March 6, 2024</li>
+          <li class="list-group-item"><strong>Payment Method:</strong> Credit Card</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

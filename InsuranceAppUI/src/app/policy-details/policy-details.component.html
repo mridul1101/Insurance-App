@@ -1,3 +1,8 @@
+<br>
+<div class="col-md-3 text-right">
+  <a class="text-info underline-link" (click)="GoToPolicyList()">PoliciesList</a> >>
+  <a>PolicyDetails</a>
+</div>
 <div class="container mt-5">
   <div *ngIf="PolicyDetails.length > 0" class="card">
     <div class="card-header">
@@ -8,11 +13,13 @@
         <li class="list-group-item"><strong>Policy ID:</strong> {{ PolicyDetails[0].policyId }}</li>
         <li class="list-group-item"><strong>Policy Name:</strong> {{ PolicyDetails[0].policyName }}</li>
         <li class="list-group-item"><strong>Premium Amount:</strong> {{ PolicyDetails[0].premiumAmount }}</li>
-        <li class="list-group-item"><strong>Last Premium Paid:</strong> {{ PolicyDetails[0].lastPremiumPaid | date }}</li>
+        <li class="list-group-item"><strong>Last Premium Paid:</strong> {{ PolicyDetails[0].lastPremiumPaid | date }}
+        </li>
         <li class="list-group-item"><strong>Next Premium Due:</strong> {{ PolicyDetails[0].nextPremiumdue | date }}</li>
         <li class="list-group-item"><strong>Policy Description:</strong> {{ PolicyDetails[0].policyDescription }}</li>
         <li class="list-group-item"><strong>Policy Type:</strong> {{ PolicyDetails[0].policyType }}</li>
-        <button class="btn btn-info mr-4" [disabled]="isPaymentDisabled(PolicyDetails[0].nextPremiumdue)">Pay Now</button>
+        <button class="btn btn-info mr-4" [disabled]="isPaymentDisabled(PolicyDetails[0].nextPremiumdue)"
+          (click)="OnClickPaymentButton(PolicyDetails[0].policyId )">Pay Now</button>
       </ul>
     </div>
   </div>
@@ -22,5 +29,3 @@
     </div>
   </div>
 </div>
-
-

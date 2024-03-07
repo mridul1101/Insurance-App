@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LoginSignUpService } from './login-sign-up.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WelcomepageComponent } from './welcomepage/welcomepage.component';
 import { AuthzGuard } from './Services/auth.guard';
@@ -17,6 +16,8 @@ import { PoliciesListComponent } from './policies-list/policies-list.component';
 import { PolicyDetailsComponent } from './policy-details/policy-details.component';
 import { PolicyService } from './Services/policy.service';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { PaymentPageComponent } from './payment-page/payment-page.component';
+import { LoginSignUpService } from './Services/login-sign-up.service';
 
 
 const routes: Routes = [
@@ -25,8 +26,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'welcomepage', component: WelcomepageComponent,canActivate:[AuthzGuard] },
   { path: 'policieslist', component: PoliciesListComponent,canActivate:[AuthzGuard]},
-  { path: 'policiesdetails', component: PolicyDetailsComponent,canActivate:[AuthzGuard]}
-
+  { path: 'policiesdetails', component: PolicyDetailsComponent,canActivate:[AuthzGuard]},
+  { path: 'paymentpage', component: PaymentPageComponent,canActivate:[AuthzGuard]}
+  
 ];
 
 @NgModule({
@@ -39,6 +41,7 @@ const routes: Routes = [
     WelcomepageComponent,
     PoliciesListComponent,
     PolicyDetailsComponent,
+    PaymentPageComponent,
   ],
   imports: [
     BrowserModule,

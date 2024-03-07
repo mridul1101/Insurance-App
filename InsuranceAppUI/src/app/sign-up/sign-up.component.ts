@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { LoginSignUpService } from '../login-sign-up.service';
 import { Router } from '@angular/router';
+import { LoginSignUpService } from '../Services/login-sign-up.service';
 
 
 
@@ -24,29 +24,19 @@ export class SignUpComponent {
      Validators.pattern(/^[a-zA-Z]*\s?[a-zA-Z]*$/),
      Validators.pattern(/^[^!@#$%^&*(),.?":{}|<>]*$/)]),  // No special characters allowed 
     email: new FormControl('', [Validators.required, Validators.email]),
-    
     mobile: new FormControl('', [Validators.required, Validators.minLength(10)
       ,Validators.maxLength(10), Validators.pattern(/^\d+$/)]),
-
     pwd: new FormControl('', [Validators.required, Validators.minLength(8),Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/)]),
     cnfpwd: new FormControl('', [Validators.required,]),
-    
   },);
   
-
-  
+   //handling user SignUP realted work
   SignUpSubmitted() {
 if (this.pwd?.value==this.cnfpwd?.value){
     const fullnameValue = this.SignUpForm.get('fullname')?.value ?? '';
     const emailValue = this.SignUpForm.get('email')?.value ?? '';
-    
     const mobileValue = this.SignUpForm.get('mobile')?.value ?? '';
     const pwdValue = this.SignUpForm.get('pwd')?.value ?? '';
-
-  
-  
-    //const encryptPass=this.loginSignUpService.encryptPassword(pwdValue);
-
     if (this.SignUpForm.valid) {
       console.log(this.SignUpForm);
       this.loginSignUpService.SignUpUser([
@@ -89,8 +79,6 @@ if (this.pwd?.value==this.cnfpwd?.value){
     return this.SignUpForm.get('email');
   }
 
-  
-
   get mobile() {
     return this.SignUpForm.get('mobile');
   }
@@ -103,6 +91,7 @@ if (this.pwd?.value==this.cnfpwd?.value){
     return this.SignUpForm.get('cnfpwd');
   }
 
+  //checking that conf password and 
   private passwordMatchValidator(form: FormGroup) {
     const pwd = form.get('pwd')?.value;
     const cnfpwd = form.get('cnfpwd')?.value;
